@@ -1,0 +1,49 @@
+{% load tetris_htmx_tags %}
+
+<div unicorn:poll-800="get_updates" id="play_area" class="container" style="width: 400px;">
+
+  {% for y in range_board_height %}
+  <div class="row">
+    {% for x in range_board_width %}
+    <div class="col">
+      <div class="box bg-{% grid_color game_state.board forloop.parentloop.counter0 forloop.counter0 %}"></div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+
+  <div class="row">
+    Step {{ game_state.get_game_step }}
+  </div>
+
+  <div class="row">
+    <button type="button"
+            unicorn:click="input('up')"
+            name="up" value="1" class="btn btn-secondary">Up
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="btn-group" role="group" aria-label="Inputs">
+      <button type="button"
+              unicorn:click="input('left')"
+              name="left" value="1" class="btn btn-secondary">Left
+      </button>
+
+      <button type="button" class="btn btn-secondary"
+              unicorn:click="input('down')"
+              name="down" value="1">Down
+      </button>
+
+      <button type="button"
+              unicorn:click="input('right')"
+              name="right" value="1" class="btn btn-secondary">Right
+      </button>
+
+    </div>
+  </div>
+  <div class="row">
+    <button unicorn:click="new_game">New Game</button>
+  </div>
+</div>

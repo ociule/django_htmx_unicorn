@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+  <h1>Tetris HTMX</h1>
+</div>
+
+{% include "play_area.html" %}
+
+<div class="row">
+  <button type="button"
+          hx-post="/tetris_htmx/" hx-target="#play_area" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+          name="up" value="1" class="btn btn-secondary">Up
+  </button>
+</div>
+
+<div class="row">
+  <div class="btn-group" role="group" aria-label="Inputs">
+    <button type="button"
+            hx-post="/tetris_htmx/" hx-target="#play_area" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            name="left" value="1" class="btn btn-secondary">Left
+    </button>
+
+    <button type="button" class="btn btn-secondary"
+            hx-post="/tetris_htmx/" hx-target="#play_area" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            name="down" value="1">Down
+    </button>
+
+    <button type="button"
+            hx-post="/tetris_htmx/" hx-target="#play_area" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            name="right" value="1" class="btn btn-secondary">Right
+    </button>
+
+  </div>
+</div>
+
+{% endblock %}

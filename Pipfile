@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-extensions = "*"
+django-unicorn = "*"
+django-htmx = "*"
+django-debug-toolbar = "*"
+
+[dev-packages]
+werkzeug = "*"
+
+[requires]
+python_version = "3.10"
