@@ -9,6 +9,8 @@ django-extensions = "*"
 django-unicorn = "*"
 django-htmx = "*"
 django-debug-toolbar = "*"
+gunicorn = "*"
+django-environ = "*"
 
 [dev-packages]
 werkzeug = "*"
