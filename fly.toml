@@ -5,7 +5,12 @@ kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
+[build]
+  builder = "paketobuildpacks/builder:full"
+  buildpacks = ["gcr.io/paketo-buildpacks/cpython"]
+
 [env]
+  DJANGO_SETTINGS_MODULE = "django_htmx_unicorn.settings"
 
 [experimental]
   allowed_public_ports = []

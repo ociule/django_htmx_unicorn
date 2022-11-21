@@ -11,6 +11,7 @@ django-htmx = "*"
 django-debug-toolbar = "*"
 gunicorn = "*"
 django-environ = "*"
+dj-database-url = "*"
 
 [dev-packages]
 werkzeug = "*"
