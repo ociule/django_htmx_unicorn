@@ -26,10 +26,10 @@ environ.Env.read_env(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = ["localhost", "django-htmx-unicorn.fly.dev"]
 
@@ -100,7 +100,7 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
+        'default': dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600),
     }
 
 # Password validation
@@ -140,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 INTERNAL_IPS = [
     # ...
@@ -191,3 +192,5 @@ def get_cache():
     }
 
 CACHES = get_cache()
+
+CSRF_TRUSTED_ORIGINS = ['https://django-htmx-unicorn.fly.dev']

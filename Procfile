@@ -1,1 +1,1 @@
-web: gunicorn django_htmx_unicorn.wsgi
+web: gunicorn -b :8080 django_htmx_unicorn.wsgi

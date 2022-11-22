@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "django-htmx-unicorn"
+version = "0.1.0"
+description = ""
+authors = ["Ovidiu Ciule <ovidiu.ciule@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_htmx_unicorn"}]
+
+[tool.poetry.dependencies]
+python = "~3.10"
+Django = "^4.1.3"
+django-extensions = "^3.2.1"
+django-unicorn = "^0.49.2"
+django-htmx = "^1.13.0"
+django-debug-toolbar = "^3.7.0"
+django-environ = "^0.9.0"
+dj-database-url = "^1.0.0"
+psycopg2-binary = "^2.9.5"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

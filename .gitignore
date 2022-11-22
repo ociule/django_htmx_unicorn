@@ -2,3 +2,5 @@ db.sqlite3
 staticfiles/*
 .env
 Pipfile.lock
+__pycache__
+poetry.lock

@@ -7,7 +7,6 @@ processes = []
 
 [build]
   builder = "paketobuildpacks/builder:full"
-  buildpacks = ["gcr.io/paketo-buildpacks/cpython"]
 
 [env]
   DJANGO_SETTINGS_MODULE = "django_htmx_unicorn.settings"
@@ -41,3 +40,7 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+[[statics]]
+  guest_path = "/workspace/staticfiles"
+  url_prefix = "/static"
